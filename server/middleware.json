@@ -1,0 +1,45 @@
+{
+  "initial:before": {
+    "loopback#favicon": {}
+  },
+  "initial": {
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
+    }
+  },
+  "session": {
+  },
+  "auth": {
+  },
+  "parse": {
+  },
+  "routes": {
+    "loopback#rest": {
+      "paths": ["${restApiRoot}"]
+    }
+  },
+  "files": {
+    "loopback#static": [
+      {
+        "name": "uploaded",
+        "paths": ["/uploaded"],
+        "params": "server/storage/folder1"
+      },
+      {
+        "name": "root",
+        "paths": ["/"],
+        "params": "$!../web"
+      }
+    ]
+  },
+  "final": {
+    "loopback#urlNotFound": {}
+  },
+  "final:after": {
+    "strong-error-handler": {}
+  }
+}
