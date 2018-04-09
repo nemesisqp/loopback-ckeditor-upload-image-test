@@ -14,7 +14,7 @@ module.exports = function(Container) {
 
     Container.afterRemote('upload', function(context, remoteMethodOutput, next) {
         context.result = {
-            default: `http://localhost:3000/uploaded/${remoteMethodOutput.result.files.file[0].name}`
+            default: `/uploaded/${remoteMethodOutput.result.files.file[0].name}`
         };
         next();
     });
