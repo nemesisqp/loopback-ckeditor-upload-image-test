@@ -1,4 +1,25 @@
 
+## Đăng Nhập Static với LoopbackAPI
+### Mô tả
+
+#### Trang Chủ : sau khi đăng nhập
+> sử dụng authen.js nằm riêng để nhúng vào nhiều trang sau này.
+
+1. Khi vào trang chủ `/`, dựa vào `accessToken` để lấy thông tin user
+    - `token` đã được lưu ở client, sau quá trình đăng nhập ở `/login.html`
+1. gọi profile api để lấy thông tin của user, 
+    - hiển thị thông tin user (username) trên trang chủ
+
+1. trường hợp không truy cập được, chưa có `accessToken` hoặc không lấy profile data thì trỏ về trang `/login.html`
+
+    
+#### Trang Login
+1. Nếu đã đăng nhập thì trỏ về trang chủ `/`
+1. hiển thị form login
+1. call api để lấy thông tin đăng nhập 
+    - POST `/api/Users/login`:  
+
+1. đăng nhập thành công, lưu `accessToken` và trỏ về trang chủ.
 
 
 
